@@ -1,0 +1,24 @@
+name: STTracker
+version: '${project.version}'
+main: eextr0.sttracker.STTracker
+api-version: 1.16
+
+permissions:
+  sttracker.*:
+    default: op
+    description: Permission to use all STTracker aspects
+    children:
+      - sttracker.check
+      - sttracker.timer
+  sttracker.check:
+    default: op
+    description: Permission to use the check command
+  sttracker.timer:
+    default: op
+    description: Enables the tracker for a player with this permission
+commands:
+  st:
+    permissions: st.commands
+    description: run STTracker commands
+    aliases:
+      - sttracker
